@@ -1,15 +1,15 @@
 #!/bin/bash 
 
-#PBS -l nodes=12:ppn=12
+#PBS -l nodes=1:ppn=12
 #PBS -l walltime=0:02:00
 
 #PBS -q batch
 
-#PBS -N out_dp_12ranks
+#PBS -N out_dp_1ranks
 
 #PBS -j oe
 
 cd /home/munoza/FinalProject
-mpiexec -np 12 -map-by ppr:1:node --hostfile $PBS_NODEFILE ./main.cx
+mpiexec -np 1 -map-by ppr:1:node --hostfile $PBS_NODEFILE ./main.cx
 
 
